@@ -1,0 +1,53 @@
+<GridLayout  rows="auto,auto,*" class="home">
+    <GridLayout class="top" rows="*,*,*" row="0">
+        <label  row="1" text="TÌNH TRẠNG SỐ CHỜ"></label>
+    </GridLayout>
+    <GridLayout row="1" rows="*,*,*,*,*" columns="*,*,*,*"  class="middle">
+        <label row="0" col="0" class="middle--text" textWrap="true" text="Quầy"></label>
+        <label row="0" col="1" class="middle--text1" textWrap="true" text="Số chờ của bạn"></label>
+        <label row="0" col="2" class="middle--text1" textWrap="true" text=" Số chờ đang giao dịch"></label>
+        <label row="0" col="3" class="middle--text1" textWrap="true" text="Số chờ đã sử dụng"></label>
+        <label row="0" colSpan="4" class="hr"></label>
+        <label row="1" col="0" class="middle--text" textWrap="true" text="Nhận hàng"></label>
+        <label row="1" col="1" class="middle--text1" textWrap="true" text=""></label>
+        <label row="1" col="2" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="1" col="3" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="1" colSpan="4" class="hr"></label>
+        <label row="2" col="0" class="middle--text" textWrap="true" text="Đặt hàng"></label>
+        <label row="2" col="1" class="middle--text1" textWrap="true" text=""></label>
+        <label row="2" col="2" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="2" col="3" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="2" colSpan="4" class="hr"></label>
+        <label row="3" col="0" class="middle--text" textWrap="true" text="Đơn hàng trực tuyến"></label>
+        <label row="3" col="1" class="middle--text1" textWrap="true" text=""></label>
+        <label row="3" col="2" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="3" col="3" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="3" colSpan="4" class="hr"></label>
+        <label row="4" col="0" class="middle--text" textWrap="true" text="Nhận hợp đồng"></label>
+        <label row="4" col="1" class="middle--text1" textWrap="true" text=""></label>
+        <label row="4" col="2" class="middle--text1" textWrap="true" text="0"></label>
+        <label row="4" col="3" class="middle--text1" textWrap="true" text="0"></label>
+    </GridLayout>
+    <GridLayout row="2" rows="auto,auto,auto,auto,auto" columns="auto,auto" class="note" >
+        <Image src="~/app/images/ic_light.png" row="0" rowSpan="2" col="0"></Image>
+        <label row="0" col="1" class="note--text" text="Lưu ý"></label>
+        <label row="1" col="1" class="note--text1" textWrap="true" text="* Điện thoại của bạn sẽ rung khi gần đến lượt"></label>
+        <label row="2" col="1" class="note--text1" textWrap="true" text="* Vui lòng khẩn trương đến quầy giao dịch"></label>
+        <label row="3" col="1" class="note--text1" textWrap="true" text="* Nếu qua lượt khách phải lấy lại số mới"></label>
+        <label row="4" col="1" class="note--text1" textWrap="true" text="* Điểm chỉ được cập nhật trên hệ thống khi
+khách hoàn tất việc nhận hàng tại quầy"></label>
+    </GridLayout>
+    <GridLayout row="2" height="10%" width="95%" colSpan="2" rows="*,*,*" columns="6*,*,*" verticalAlignment="bottom"
+        class="bottom">
+        <StackLayout class="itembottom" rowSpan="2" col="1">
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe902;"></button>
+        </StackLayout>
+        <StackLayout class="itembottom" rowSpan="2" col="2">
+            <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+        </StackLayout>
+    </GridLayout>
+
+
+</GridLayout>

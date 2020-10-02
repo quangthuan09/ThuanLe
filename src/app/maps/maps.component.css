@@ -1,0 +1,44 @@
+.home{
+    background-image: url('~/app/images/contact-bg.png');
+    background-size: cover;
+}
+
+.choosemap{
+
+    height: 10%;
+    
+}
+.choosemap--bg{
+    background-color: white;
+    border-radius: 20;
+    width: 90%;
+}
+
+.maps{
+    background-color: turquoise;
+}
+
+
+#item1{
+    background-color: white;
+    font-size: 30;
+    width: 70%;
+    padding-left: 5;
+    border-radius: 100;
+}
+.OrangeColor{
+    border-radius: 20;
+    width: 100%;
+    color: white;
+    background: linear-gradient(to right, #f12711, #f5af19);
+    vertical-align: middle;
+    text-align: center;
+}
+.defaultColor{
+    border-radius: 20;
+    width: 100%;
+    color: black;
+    background-color: white;
+    vertical-align: middle;
+    text-align: center;
+}

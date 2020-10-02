@@ -1,0 +1,59 @@
+ListView {
+    separator-color: white;
+  }
+  .top{
+    background: linear-gradient(to right, #4568DC, #B06AB3);
+      vertical-align: middle;
+      text-align: center;
+      font-size: 18;
+      color: white;
+  }
+  .msg {
+      font-size: 14;
+      padding: 5;
+  }
+  
+  .me .msg_text {
+      background-color: #30A9FF;
+      color: white;
+      padding: 8;
+      margin-right: 10;
+      border-radius: 5;
+      
+  }
+  
+  .them .msg_text {
+      background-color: #6e0b0b;
+      color: #333;
+      padding: 7;
+      border-radius: 5;
+      margin-right: 40;
+  }
+  
+  .authorimg {
+      margin: 0 5 5 5;
+      width: 30;
+      height: 30;
+      border-radius: 15;
+  }
+  
+  .chatTextField {
+      padding: 5; 
+      background-color:ghostwhite;
+      border-width: 1;
+
+  }
+  
+  .chatBtn{
+
+      background: linear-gradient(to right, #4568DC, #B06AB3);
+      color: white;
+      height: 100%;
+
+  }
+  .btnback{
+      width: 10%;
+      height: 100%;
+    font-size: 25;
+    text-align: left;
+  }

@@ -1,0 +1,209 @@
+<RadSideDrawer [drawerTransition]="sideDrawerTransition"> 
+    <GridLayout tkDrawerContent rows="auto,4*,*" class="sidedrawer sidedrawer-left"> 
+        <StackLayout row="0" class="sidedrawer-header">
+            <StackLayout class="user" horizontalAlignment="left">
+                <Label class="sidedrawer-header-image fas" text="&#xf2bd;" ></Label>
+            </StackLayout>
+            
+            <Label class="footnote" [text]="username"></Label>
+        </StackLayout>
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+                <GridLayout columns="auto, *" class="sidedrawer-list-item">
+                    <Label col="0" id="itemdrawer" text="&#xf0e0;" class="fas"></Label>
+                    <Label col="1" text="  Hỗ trợ kỹ thuật" (tap)="tapSupport()" class="p-r-10"></Label>
+                </GridLayout>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item">
+                    <Label col="0" id="itemdrawer" text="&#xf2f5;" class="fas"></Label>
+                    <Label col="1" text="  Thoát App" (tap)="tapExit()" class="p-r-10"></Label>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+        <GridLayout class="info" row="2" columns="auto,auto" backgroundColor="white" textAlignment="center">
+            <label text="&#xf05a;" color="blue" class="fas"></label>
+            <label col="1" text="  Phiên bản 1.7.0"></label>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="3" columns="*,*,*" rows="*,2*,5*,*" tkMainContent class="home">
+        <GridLayout row="0" *ngIf="mainindex==0" rowSpan="3" colSpan="3" rows="*,2*,5*" columns="*,*">
+            <GridLayout class="menubar" colSpan="3" col="0" rows="*,*,*,*" columns="*,3*,3*,*">
+                <label col="0" row="1" rowSpan="2" textAlignment="center" class="ico_moon" text="&#xe9bd;"
+                    (tap)="openDrawer()"></label>
+                <label col="1" rowSpan="2" colSpan="2" textAlignment="center" row="1" text="MÀN HÌNH CHÍNH"></label>
+
+            </GridLayout>
+            <GridLayout *ngIf="loadingPager" row="1" colSpan="3" rows="6*,*">
+                <Pager row="0" [items]="items" #pager [selectedIndex]="currentPagerIndex"
+                    (selectedIndexChange)="onIndexChanged($event)" class="pager">
+                    <ng-template let-i="index" let-item="item">
+                        <GridLayout class="pager-item" rows="auto, *">
+                            <image stretch="fill" class="imageQC" rowSpan="2"
+                                [src]="'https://office.nsvnapp.com/' + item.banner" (tap)="openQC(item.url)"></image>
+                        </GridLayout>
+                    </ng-template>
+                </Pager>
+                <StackLayout row="1" orientation="horizontal" horizontalAlignment="center">
+                    <label *ngFor="let item of itemsDotted" [ngClass]="dottedActive(item)"></label>
+                </StackLayout>
+            </GridLayout>
+            <GridLayout row="2" colSpan="3" columns="*,*,*" rows="*,*,*,*">
+                <GridLayout class="itempick" row="0" col="0" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon1.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Lấy số chờ đặt hàng"></label>
+                </GridLayout>
+                <GridLayout (tap)="openGetNumberPickup()" class="itempick" row="0" col="1" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon2.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Lấy số chờ nhận hàng"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="0" col="2" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon3.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Lấy số chờ đổi máy Bảo Hành"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="1" col="0" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon4.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Lấy số gặp bộ phận Bảo Hành"></label>
+                </GridLayout>
+                <GridLayout (tap)="openStatusNumber()" class="itempick" row="1" col="1" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon5.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Tình trạng số chờ"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="1" col="2" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon6.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Quỹ phẫu thuật tim FFG"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="2" col="0" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon7.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Đặt lịch phòng họp"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="2" col="1" rows="*,*" (tap)="openMaps()">
+                    <Image row="0" src="~/app/images/main/icon8.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Bản đồ văn phòng"></label>
+                </GridLayout>
+                <GridLayout class="itempick" row="2" col="2" rows="*,*">
+                    <Image row="0" (tap)="tapContact()" src="~/app/images/main/icon9.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Liên hệ"></label>
+                </GridLayout>
+                <GridLayout (tap)="thongke()" class="itempick" row="3" col="0" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon10.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="WH nhập liệu"></label>
+                </GridLayout>
+                <GridLayout (tap)="tapMessage()" class="itempick" row="3" col="1" rows="*,*">
+                    <Image row="0" src="~/app/images/main/icon11.png"></Image>
+                    <label row="1" class="text" textWrap="true" text="Trả lời tin nhắn"></label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout row="0" *ngIf="mainindex==1" rowSpan="3" colSpan="3" rows="*,2*,5*" columns="*,*">
+            <GridLayout class="menubar" colSpan="3" col="0" rows="*,*,*,*" columns="*,3*,3*,*">
+                <label col="0" row="1" rowSpan="2" textAlignment="center" class="ico_moon" text="&#xe9bd;"
+                    (tap)="openDrawer()"></label>
+                <label col="1" rowSpan="2" colSpan="2" textAlignment="center" row="1" text="LỊCH SỬ GIAO DỊCH"></label>
+                <label col="3" row="1" rowSpan="2" textAlignment="center" class="ico_moon" text="&#xe901;"
+                    (tap)="openMessage()"></label>
+            </GridLayout>
+            <ScrollView  row="1" rowSpan="2" colSpan="2"  >
+                <GridLayout backgroundColor="green" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto">
+                    <GridLayout row="0" rows="auto,auto" >
+                        <label row="0" text="test dòng 1"></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="1" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="2" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="3" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="4" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="5" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="6" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="7" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="8" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="9" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="10" rows="auto,auto">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+                    <GridLayout row="11" rows="auto,auto" height="70%">
+                        <label row="0" text=""></label>
+                        <label row="1" class="hr"></label>
+                    </GridLayout>
+
+                </GridLayout>
+            </ScrollView>
+        </GridLayout>
+        <GridLayout row="0" *ngIf="mainindex==2" rowSpan="3" colSpan="3" rows="*,auto,5*" columns="*,*">
+            <GridLayout class="menubar" colSpan="3" col="0" rows="*,*,*,*" columns="*,3*,3*,*">
+                <label col="0" row="1" rowSpan="2" textAlignment="center" class="ico_moon" text="&#xe9bd;"
+                    (tap)="openDrawer()"></label>
+                <label col="1" rowSpan="2" colSpan="2" textAlignment="center" row="1" text="TÀI KHOẢN"></label>
+            </GridLayout>
+            <GridLayout row="1" rows="auto,auto,auto,auto,auto" colSpan="2" >
+                <label row="0"  class="txt-account" id="txt-account-header" text="Thông tin cá nhân"></label>
+                <label row="0" colSpan="2" class="hr"></label>
+                <GridLayout row="1" rows="auto,auto" columns="*,*" >
+                    <label class="txt-account" row="0" col="0" text="VNID"></label>
+                    <label row="0" class="txt-account" col="1" id="txt-account-right" text=""></label>
+                    <label row="0" colSpan="2" class="hr"></label>
+                </GridLayout>
+                <GridLayout row="2" rows="auto,auto" columns="*,*" >
+                    <label class="txt-account" row="0" col="0" text="Email"></label>
+                    <label row="0" class="txt-account" col="1" id="txt-account-right" text="VNID"></label>
+                    <label row="0" colSpan="2" class="hr"></label>
+                </GridLayout>
+                <GridLayout row="3" rows="auto,auto" columns="*,*" >
+                    <label class="txt-account" row="0" col="0" text="Điện thoại"></label>
+                    <label row="0" class="txt-account" col="1" id="txt-account-right" text="VNID"></label>
+                    <label row="0" colSpan="2" class="hr"></label>
+                </GridLayout>
+                <GridLayout row="4" rows="auto,auto" columns="*,*">
+                    <label class="txt-account" row="0" col="0" text="Đăng Xuất"></label>
+                    <label row="0" col="1" id="itemdrawer" text="&#xe903;" class="iconlogout ico_moon" (tap)="logout()"></label>
+                    <label row="0" colSpan="2" class="hr"></label>
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout row="3" colSpan="3" rows="*,*" columns="*,*,*" verticalAlignment="bottom" class="bottomM">
+            <StackLayout class="itembottomM" (tap)="tapMain()" rowSpan="2" col="0">
+                <label class="ico_moon" text="&#xe905;"
+                    class="{{ mainindex==0 ? 'ico_moon OrangeColor' : ' ico_moon defaultColor'}}"></label>
+                <Label text="màn hình chính" id="txt_bottom"
+                    class="{{ mainindex==0 ? ' OrangeColor' : ' defaultColor'}}"></Label>
+            </StackLayout>
+            <StackLayout class="itembottomM" (tap)="tapHistory()" rowSpan="2" col="1">
+                <label class="ico_moon" text="&#xe904;"
+                    class="{{ mainindex==1 ? 'ico_moon OrangeColor' : ' ico_moon defaultColor'}}"></label>
+                <Label text="lịch sử giao dịch" id="txt_bottom"
+                    class="{{ mainindex==1 ? 'OrangeColor' : ' defaultColor'}}"></Label>
+            </StackLayout>
+            <StackLayout class="itembottomM" (tap)="tapAccount()" rowSpan="2" col="2">
+                <label text="&#xf2bd;" class="{{ mainindex==2 ? 'fas OrangeColor' : ' fas defaultColor'}}"></label>
+                <Label text="tài khoản" id="txt_bottom"
+                    class="{{ mainindex==2 ? ' OrangeColor' : 'defaultColor'}}"></Label>
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</RadSideDrawer>

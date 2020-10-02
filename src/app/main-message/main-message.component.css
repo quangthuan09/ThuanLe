@@ -1,0 +1,23 @@
+.background{
+    background-image: url('~/app/images/bg_2.jpg');
+    background-size: cover;
+}
+.top{
+    color: white;
+    text-align: center;
+    font-size: 20;
+    background: linear-gradient(to right, #00f9ff, #9258e4);
+}
+
+.index{
+    font-weight: 400;
+    font-size: 15;
+    padding: 5;
+    text-align: center;
+
+
+}
+
+.text1{
+    vertical-align: middle;
+}

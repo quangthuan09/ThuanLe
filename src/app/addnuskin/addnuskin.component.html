@@ -1,0 +1,46 @@
+<StackLayout class="page"  >
+    <GridLayout class="GridBar" columns="*,10*"  horizontalAlignment="center" verticalAlignment="center" >
+        <Label (tap)="tapBack()" class="GridBar__btnback ico_moon" text="&#xe902;" col="0" ></Label>
+        <Label class="GridBar__label" id="text_color" text="BỔ SUNG MÃ SỐ" col="1"></Label>
+    </GridLayout>
+    <Label class="Alert" textWrap="true"  id="text_color" [visibility]="isWrong ? 'visible' : 'hidden'">
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span [text] ="errorsdt"></span>
+        </FormattedString>
+
+    </Label>
+    <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center" >
+        <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconphone.jpg"></Image>
+        <TextField class="RowsIndex_Field" [(ngModel)] = "sdt"  style.placeholderColor="white" hint="Nhập số điện thoại *" col="1"></TextField>
+    </GridLayout>  
+    <Label class="Alert" textWrap="true"  id="text_color" [visibility]="isWrongEmail ? 'visible' : 'hidden'">
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span [text] ="erroremail"></span>
+        </FormattedString>
+    </Label>  
+    <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center" >
+        <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconmail.jpg"></Image>
+        <TextField class="RowsIndex_Field" [(ngModel)] = "email"  style.placeholderColor="white" hint="Nhập email*" col="1"></TextField>
+    </GridLayout>
+    <Label class="Alert" textWrap="true"  id="text_color" [visibility]="isWrongVNID ? 'visible' : 'hidden'">
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span [text] ="errorVNID"></span>
+        </FormattedString>
+    </Label>   
+    <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center" >
+        <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconnumber.jpg"></Image>
+        <TextField class="RowsIndex_Field" [(ngModel)] = "VNID" style.placeholderColor="white" hint="Nhập mã số VNID*" col="1"></TextField>
+    </GridLayout> 
+
+
+    <StackLayout class="Llabel_resignter" (tap) ="tapSave()" >
+        <Label id="label_login"
+        text="Lưu"
+        horizontalAlignment="center"
+        (loaded)="onLabelLoaded($event)"
+      ></Label>
+    </StackLayout>
+</StackLayout>

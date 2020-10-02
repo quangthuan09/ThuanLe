@@ -1,0 +1,67 @@
+<StackLayout class="page">
+    <GridLayout class="GridBar" columns="*,10*" horizontalAlignment="center" verticalAlignment="center">
+        <Label (tap)="tapBack()" class="GridBar__btnback" text="<" col="0"></Label>
+        <Label class="GridBar__label" id="text_color" text="ĐĂNG KÝ" col="1"></Label>
+    </GridLayout>
+    <ScrollView height="90%" (scroll)="onScroll($event)">
+        <StackLayout>
+            <Label class="Alert" textWrap="true" id="text_color" [visibility]="isWrong ? 'visible' : 'hidden'">
+                <FormattedString>
+                    <Span class="fas" text="&#xf071; "></Span>
+                    <span [text]="errorsdt"></span>
+                </FormattedString>
+
+            </Label>
+            <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center">
+                <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconphone.jpg"></Image>
+                <TextField class="RowsIndex_Field" [(ngModel)]="user.sdt" style.placeholderColor="white"
+                    hint="Nhập số điện thoại *" col="1"></TextField>
+            </GridLayout>
+            <Label class="Alert" textWrap="true" id="text_color" [visibility]="isWrongEmail ? 'visible' : 'hidden'">
+                <FormattedString>
+                    <Span class="fas" text="&#xf071; "></Span>
+                    <span [text]="erroremail"></span>
+                </FormattedString>
+            </Label>
+            <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center">
+                <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconmail.jpg"></Image>
+                <TextField class="RowsIndex_Field" [(ngModel)]="user.email" style.placeholderColor="white" hint="Nhập email*"
+                    col="1"></TextField>
+            </GridLayout>
+            <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center">
+                <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconnumber.jpg"></Image>
+                <TextField class="RowsIndex_Field" [(ngModel)]="user.VNID" style.placeholderColor="white"
+                    hint="Nhập mã số VNID*" col="1"></TextField>
+            </GridLayout>
+            <Label class="Alert" id="Alert__2rows" textWrap="true" id="text_color"
+                [visibility]="isWrongPass ? 'visible' : 'hidden'">
+                <FormattedString>
+                    <Span class="fas" text="&#xf071; "></Span>
+                    <span [text]="errorpass"></span>
+                </FormattedString>
+            </Label>
+            <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center">
+                <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconlock.png"></Image>
+                <TextField class="RowsIndex_Field" #passwordField secure="true" [(ngModel)]="user.password"
+                    style.placeholderColor="white" hint="Nhập mật khẩu *" col="1"></TextField>
+            </GridLayout>
+            <Label class="Alert" id="Alert__2rows" textWrap="true" id="text_color"
+                [visibility]="isWrongRePass ? 'visible' : 'hidden'">
+                <FormattedString>
+                    <Span class="fas" text="&#xf071; "></Span>
+                    <span [text]="errorrepass"></span>
+                </FormattedString>
+            </Label>
+            <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center">
+                <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconlock.png"></Image>
+                <TextField class="RowsIndex_Field" secure="true" #passwordField1 [(ngModel)]="repassword"
+                    style.placeholderColor="white" hint="Nhập lại mật khẩu *" col="1"></TextField>
+            </GridLayout>
+            <Label horizontalAlignment="right" color="lightgreen"  text="ẩn/hiện Mật Khẩu" (tap)="toggleShow()" color="white"></Label>
+            <StackLayout class="Llabel_resignter" (tap)="tapResignter()">
+                <Label id="label_login" text="ĐĂNG KÝ" horizontalAlignment="center"
+                    (loaded)="onLabelLoaded($event)"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

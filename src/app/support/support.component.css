@@ -1,0 +1,70 @@
+.background{
+    background-image: url('~/app/images/bg_2.jpg');
+    background-size: cover;
+}
+.top{
+    color: white;
+    text-align: center;
+    padding-top: 25%;
+    font-size: 20;
+    height: 80;
+    background: linear-gradient(to right, #00f9ff, #9258e4);
+}
+.middle{
+    height: 70%;
+    width: 90%;
+    font-size: 15;
+    
+    
+}
+.thongbao{
+    padding: 20;
+}
+
+.Lindex{
+    height: 50;
+    margin-bottom: 10;
+    
+}
+#index{
+    height: 50;
+    width: 78%;
+    border-radius: 5;
+    margin-left: 20;
+    padding-left: 15;
+    border-width: 1;
+    border-color: rgb(154, 239, 245);
+    background-color: rgba(255,255,255, 0.3);
+    border: lightgreen;
+}
+.icon{
+    vertical-align: middle;
+    width: 50;
+    height: 70;
+    border-width: 1;
+    border-color: rgb(154, 239, 245);
+    background-color: white;
+    border-radius: 4;
+}
+.noidung{
+
+    border-width: 1;
+    border-color: rgb(154, 239, 245);
+
+    border-radius: 5;
+    line-height: 2;
+}
+.btn_POST{
+    margin-top: 20;
+    color: white;
+    width: 100%;
+    border-radius: 10;
+    background: linear-gradient(to left, #00f9ff, #9258e4);
+}
+.btnback{
+        width: 80%;
+        height: 80%;
+        font-size: 25;
+        border-radius: 100;
+        background-color: white;
+}

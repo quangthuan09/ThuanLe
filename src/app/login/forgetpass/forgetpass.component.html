@@ -1,0 +1,43 @@
+
+<StackLayout class="page"  >
+    <GridLayout class="GridBar" columns="*,10*"  horizontalAlignment="center" verticalAlignment="center" >
+        <Label (tap)="tapBack()" class="GridBar__btnback" text="<" col="0" ></Label>
+        <Label class="GridBar__label" id="text_color" text="QUÊN MẬT KHẨU" col="1"></Label>
+    </GridLayout>
+    <Label class="Alert0" textWrap="true"  id="text_color"  >
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span  textWrap="true" text=" Vui lòng nhập thông tin chính xác đã cung cấp trước đó. Chúng tôi sẽ gửi 1 email đến địa chỉ email đã đăng ký để cung cấp đường dẫn lấy lại mật khẩu"></span>
+        </FormattedString>
+    </Label>
+    <Label class="Alert" textWrap="true"  id="text_color" [visibility]="isWrong ? 'visible' : 'hidden'">
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span [text] ="errorsdt"></span>
+        </FormattedString>
+
+    </Label>
+    <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center" >
+        <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconphone.jpg"></Image>
+        <TextField class="RowsIndex_Field" [(ngModel)] = "sdt"  style.placeholderColor="white" hint="Nhập số điện thoại *" col="1"></TextField>
+    </GridLayout>  
+    <Label class="Alert" textWrap="true"  id="text_color" [visibility]="isWrongEmail ? 'visible' : 'hidden'">
+        <FormattedString>
+            <Span class="fas" text="&#xf071; "></Span>
+            <span [text] ="erroremail"></span>
+        </FormattedString>
+    </Label>  
+    <GridLayout class="RowsIndex" columns="*,6*" horizontalAlignment="center" verticalAlignment="center" >
+        <Image class="RowsIndex_icon" id="RowsIndex_icon_sdt" src="~/app/images/iconmail.jpg"></Image>
+        <TextField class="RowsIndex_Field" [(ngModel)] = "email"  style.placeholderColor="white" hint="Nhập email*" col="1"></TextField>
+    </GridLayout>
+
+
+    <StackLayout class="Llabel_resignter" (tap) ="tapForget()" >
+        <Label id="label_login"
+        text="Lưu"
+        horizontalAlignment="center"
+        (loaded)="onLabelLoaded($event)"
+      ></Label>
+    </StackLayout>
+</StackLayout>

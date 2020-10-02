@@ -1,0 +1,103 @@
+.switch_text {
+    color: white;
+    font-size: 15;
+    margin-right: 3;
+  }
+  
+  .mask {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .frame-top-left {
+    border-top-width: 3;
+    border-left-width: 3;
+    border-color: #51b8ed;
+  }
+  
+  .frame-top-right {
+    border-top-width: 3;
+    border-right-width: 3;
+    border-color: #51b8ed;
+  }
+  
+  .frame-bottom-left {
+    border-bottom-width: 3;
+    border-left-width: 3;
+    border-color: #51b8ed;
+  }
+  
+  .frame-bottom-right {
+    border-bottom-width: 3;
+    border-right-width: 3;
+    border-color: #51b8ed;
+  }
+  
+  .swing {
+    animation-name: swingAnimation;
+    animation-duration: 6s;
+    animation-iteration-count: 10;
+    animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  }
+  
+  @keyframes swingAnimation {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, 300);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .text_title {
+    color: white;
+    font-size: 15;
+  }
+  .button_tick {
+    font-size: 25;
+    text-align: center;
+    color: #068306;
+  }
+  .layout_button_tick {
+    height: 60;
+    width: 60;
+    border-radius: 40;
+    background-color: white;
+    vertical-align: middle;
+    margin-bottom: 15;
+  }
+  .layout_barcode {
+    background-color: #cccccc;
+  }
+  .layout_scanner_middle {
+    background-color: white;
+  }
+  .layout_scanner_middle_granted {
+    background-color: transparent;
+  }
+  .layout_switch {
+    margin-top: 3;
+    margin-right: 10;
+  }
+  
+  .button_close {
+    width: 80;
+    height: 55;
+    color: white;
+    font-size: 20;
+    background-color: transparent;
+    padding-top: 20;
+    padding-right: 20;
+    text-align: center;
+    vertical-align: middle;
+  
+  }
+  .action_bar_title_main {
+    font-size: 20;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10;
+  }

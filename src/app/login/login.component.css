@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+.Lhome{
+    background-image: url('~/app/images/bg_login.png') ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.Llogo1{
+
+    padding-top: 40%;
+}
+.logo{
+    width: 50%;
+}
+.wrong_pass{
+    width: 85%;
+    text-align: center;
+}
+#wrong_pass{
+    font-size: 14;
+    padding: 10;
+    color: white;
+}
+.middle{
+    width: 95%;
+    margin-top: 5;
+}
+.Lindex{
+    height: 50;
+    
+    margin-bottom: 10;
+    
+}
+.icon{
+    vertical-align: middle;
+    width: 50;
+    height: 50;
+    background-color: white;
+    border-radius: 5;
+}
+.icon--image{
+    width: 45;
+    height: 45;
+}
+#index{
+
+    background-color: rgba(255,255,255, 0.3);
+    border-radius: 5;
+    padding-left: 10;
+    margin-right: 0;
+    width: 80%;
+    height: 120;
+    font-size: 15;
+    color: white;    
+}
+
+.Llabel_login{
+    border-radius: 5;
+    height: 50;
+
+    background-color: white;
+
+    vertical-align: middle;
+    
+}
+#label_login{
+    font-size: 20;
+
+    vertical-align: middle;
+
+}
+.label_item{
+    color: white;
+    font-size: 15;
+}
+.Lremember{
+    margin-left: -7;
+    margin-top: 5;
+
+}
+
+#label2{
+    margin-block-end: 10%;
+    padding-top: 20;
+}
+
+.LBottom{
+    width: 30%;
+}
+.LBottom1{  
+    width: 50%;
+}
+.LBottom2{ 
+    width: 40%;
+}

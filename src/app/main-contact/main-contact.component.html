@@ -1,0 +1,192 @@
+<GridLayout *ngIf="loading" columns="*,*,*,*" rows="*,8*" class="home">
+    <GridLayout class="top"
+     row="0" col="0" colSpan="4" rows="*,*,*,*" columns="*,*,*,*">
+        <label col="1" row="1" colSpan="2" rowSpan="2" text="LIÊN HỆ"></label>
+    </GridLayout>
+
+    <ScrollView width="95%" class="content" height="100%" col="0" row="1" colSpan="4" orientation="vertical">
+        <!-- More XML -->
+
+        <GridLayout rows="*,*,*,*,*,*,*,*" columns="*,*,*,*">
+            <GridLayout colSpan="4" row="0" rows="*,*,*" columns="5*,*,*">
+                <label (tap)="tapMessageReception()" class="index" colSpan="3" row="0" text="Liên Hệ Tiếp Tân"></label>
+                <Image (tap)="tapMessageReception()" class="iconcontact1" col="1" row="0" src="~/app/images/iconcontact1.png"></Image>
+                <Image class="iconcontact2" (tap)="callPhone(contact.tel_hcm)"  col="2" row="0" src="~/app/images/iconcontact2.png"></Image>
+                <label (tap)="tapMessageOrder()" class="index" colSpan="3" row="1" text="Liên Hệ Đặt Hàng"></label>
+                <Image (tap)="tapMessageOrder()" class="iconcontact1" col="1" row="1" src="~/app/images/iconcontact1.png"></Image>
+                <Image class="iconcontact2" (tap)="callPhone(contact.tel_hcm)" col="2" row="1" src="~/app/images/iconcontact2.png"></Image>
+                <label (tap)="tapMessageDelivery()" class="index" colSpan="3" row="2" text="Liên Hệ Giao Hàng"></label>
+                <Image (tap)="tapMessageDelivery()" class="iconcontact1" col="1" row="2" src="~/app/images/iconcontact1.png"></Image>
+                <Image class="iconcontact2" (tap)="callPhone(contact.tel_hcm)" col="2" row="2" src="~/app/images/iconcontact2.png"></Image>
+            </GridLayout>
+            <GridLayout class="thongtin" row="1" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" text="GIỜ LÀM VIỆC"></label>
+                <label class="thongtin_bold" row="1" textWrap="true"
+                    text="Giờ làm việc của Trung Tâm Phân Phối HCM & Hà Nội"></label>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="far" text="&#xf017; "></label>
+                    <label col="1" textWrap="true" [text]="time_work_day"></label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="3" columns="*,15*">
+                    <label col="0" id="item" class="far" text="&#xf017; "></label>
+                    <label col="1" textWrap="true" [text]="time_work_weekend"></label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="4" columns="*,15*">
+                    <label col="0" id="item" class="far" text="&#xf017; "></label>
+                    <label col="1" textWrap="true" [text]="time_work_holiday"></label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="thongtin" row="2" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" textWrap="true" [text]="contact.title_hcm"></label>
+                <GridLayout class="thongtin_item" row="1" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf3c5; "></label>
+                    <label col="1" textWrap="true" [text]="contact.address_hcm"></label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" (tap)="callPhone(contact.tel_hcm)" textWrap="true">
+                        <FormattedString>
+                            <Span class="" text="Điện thoại: "></Span>
+                            <span [text]="contact.tel_hcm"  class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="3" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf0e0; "></label>
+                    <Label col="1" textWrap="true" (tap)="onEmailSend(contact.email_hcm)" >
+                        <FormattedString>
+                            <Span class="" text="Email: "></Span>
+                            <span [text]="contact.email_hcm" class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="4" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf0ac; "></label>
+                    <Label col="1" textWrap="true" (tap)="openWeb(contact.web_hcm)">
+                        <FormattedString>
+                            <Span class="" text="Website: "></Span>
+                            <span [text]="contact.web_hcm"  class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="thongtin" row="3" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" textWrap="true" [text]="contact.title_hn"></label>
+                <GridLayout class="thongtin_item" row="1" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf3c5; "></label>
+                    <label col="1" textWrap="true" [text]="contact.address_hn"></label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="callPhone(contact.tel_hn)">
+                        <FormattedString>
+                            <Span class="" text="Điện thoại: "></Span>
+                            <span [text]="contact.tel_hn" class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="3" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf0e0; "></label>
+                    <Label col="1" textWrap="true" (tap)="onEmailSend(contact.email_hn)">
+                        <FormattedString>
+                            <Span class="" text="Email: "></Span>
+                            <span [text]="contact.email_hn" class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="thongtin" row="4" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" textWrap="true" text="ĐẶT HÀNG"></label>
+                <GridLayout class="thongtin_item" row="1" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="callPhone(contact.order_hotline)">
+                        <FormattedString>
+                            <Span class="" text="Hotline: "></Span>
+                            <span [text]=" contact.order_hotline " class="text_link_blue"></span>
+                            <span [text]=" contact.order_ext "></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="openViber()" >
+                        <FormattedString>
+                            <Span class="" text="Số viber: "></Span>
+                            <span [text]="contact.order_viber_1" class="text_link_blue"></span>
+                            
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="3" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf0e0; "></label>
+                    <Label col="1" textWrap="true" (tap)="onEmailSend(contact.order_email)">
+                        <FormattedString>
+                            <Span class="" text="Email: "></Span>
+                            <span [text]="contact.order_email" class="text_link_blue"></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="thongtin" row="5" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" textWrap="true" text="GIAO HÀNG"></label>
+                <GridLayout class="thongtin_item" row="1" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="callPhone(contact.delivery_hotline)">
+                        <FormattedString >
+                            <Span class="" text="Hotline: "></Span>
+                            <span [text]=" contact.delivery_hotline " class="text_link_blue"></span>
+                            <span [text]=" contact.delivery_ext "></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="openViber(contact.delivery_viber)">
+                        <FormattedString>
+                            <Span class="" text="Số viber: "></Span>
+                            <span [text]="contact.delivery_viber" class="text_link_blue"></span>         
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="thongtin" row="6" colSpan="4" rows="2*,*,*,*,*">
+                <label class="thongtin_bold" row="0" textWrap="true" text="TƯ VẤN, THẮC MẮC VỀ SẢN PHẨM"></label>
+                <GridLayout class="thongtin_item" row="1" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf879; "></label>
+                    <Label col="1" textWrap="true" (tap)="callPhone(contact.support_hotline)">
+                        <FormattedString>
+                            <Span class="" text="Hotline: "></Span>
+                            <span [text]=" contact.support_hotline " class="text_link_blue"></span>
+                            <span [text]=" contact.support_ext "></span>
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+                <GridLayout class="thongtin_item" row="2" columns="*,15*">
+                    <label col="0" id="item" class="fas" text="&#xf0e0; "></label>
+                    <Label col="1" textWrap="true" (tap)="onEmailSend(contact.support_email)">
+                        <FormattedString>
+                            <Span class="" text="Email: "></Span>
+                            <span [text]="contact.support_email" class="text_link_blue"></span>         
+                        </FormattedString>
+                    </Label>
+                </GridLayout>
+            </GridLayout>
+            <GridLayout class="content_bottom" row="7" colSpan="4">
+
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+    <GridLayout row="2" colSpan="4" rows="*,*,*" columns="6*,*,*" height="10%" width="95%" verticalAlignment="bottom" class="bottom">
+        <StackLayout (tap)="tapBack()" class="itembottom" rowSpan="2" col="1">
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe902;"></button>
+        </StackLayout>
+        <StackLayout class="itembottom" rowSpan="2" col="2">
+            <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+        </StackLayout>
+    </GridLayout>
+    
+</GridLayout>

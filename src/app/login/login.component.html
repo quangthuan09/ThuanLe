@@ -1,0 +1,68 @@
+
+<StackLayout class="Lhome">
+    
+    <StackLayout class="Llogo1">
+        <Image class="logo" src="~/app/images/logo.png"></Image>
+    </StackLayout>
+    <StackLayout class="wrong_pass"  >
+        <Label  [visibility]="isWrong ? 'visible' : 'hidden'"  id="wrong_pass" class="error_login" textWrap="true">
+            <FormattedString>
+                <Span  class="fas" text="&#xf071;"></Span>
+                <span
+                    [text]="errorMessage"></span>
+            </FormattedString>
+        </Label>
+    </StackLayout>
+    <StackLayout class="middle" >
+ 
+    <DockLayout class="Lindex"  stretchLastChild="true">
+        <StackLayout class="icon" >
+            <Image class="icon--image" src="~/app/images/iconface.png"></Image>
+        </StackLayout>
+        <TextField id="index"  dock="right" [(ngModel)] = "user.email" hint =  "VNID hoặc Email" class = "email" style.placeholderColor="white"> </TextField>
+    </DockLayout>  
+    <DockLayout class="Lindex"  stretchLastChild="true">
+        <StackLayout class="icon" >
+            <Image class="icon--image" src="~/app/images/iconlock.png"></Image>
+        </StackLayout>
+        <TextField id="index" #passwordField [(ngModel)] = "user.password" text="{{password}}" hint ="Mật Khẩu" secure="true" class = "password" style.placeholderColor="white"> </TextField>
+    </DockLayout>
+    
+    <Label horizontalAlignment="right" color="lightgreen" text ="ẩn/hiện Mật Khẩu" (tap)="toggleShow()" ></Label>
+    <StackLayout class="Llabel_login" (tap) ="tapLogin()" >
+        <Label id="label_login"
+        text="ĐĂNG NHẬP"
+        horizontalAlignment="center"
+        (loaded)="onLabelLoaded($event)"
+      ></Label>
+    </StackLayout>
+    <GridLayout class="Lremember" rows="auto" columns="*">
+        <CheckBox row="0"  horizontalAlignment="left" fillColor="white" color="#FFFFFF" class="checkbox" (tap)="checkedremember()" text="Ghi nhớ tài khoản" #CB1 checked="true"></CheckBox>                     
+        <label  row="0" horizontalAlignment="right"  verticalAlignment="center" class="label_item " id="label1" (tap)="tapForgotPass()"  text="QUÊN MẬT KHẨU"></label>
+    </GridLayout> 
+   
+</StackLayout>   
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" height="100%" >
+        <ScrollView
+            width="100%"
+            orientation="horizontal">
+            <!-- More XML -->
+        </ScrollView> 
+        <StackLayout 
+            width="100%"
+            visibility="visible"
+            orientation="vertical"
+            >
+            <StackLayout class="LBottom">
+                <label textAlignment="center" class="label_item" id="label2" (tap) ="tapResignter()" text="ĐĂNG KÝ"></label>
+            </StackLayout>
+            <StackLayout class="LBottom1">
+                <label textAlignment="center" class="label_item" id="label2" (tap) ="tapAddNumber()" text="BỔ SUNG MÃ SỐ NUSKIN"></label>
+            </StackLayout>
+            <StackLayout class="LBottom2">
+                <label textAlignment="center" class="label_item" id="label2" (tap) ="tapSupport()" text="HỖ TRỢ KỸ THUẬT"></label>
+            </StackLayout>
+        </StackLayout>
+    </FlexboxLayout>
+    
+</StackLayout>

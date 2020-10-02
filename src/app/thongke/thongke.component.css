@@ -1,0 +1,37 @@
+
+.header{
+    height: 10%;
+    background-color: orange;
+    font-size: 20;
+    color: white;
+    background: linear-gradient(to right, rgb(211, 158, 207), #f12711, #f5af19);
+}
+.header--text{
+    text-align: center;
+    vertical-align: middle;
+}
+.tab--text{
+    text-align: center;
+    vertical-align: middle;
+}
+.Gradient{
+    background: linear-gradient(to right, rgb(211, 158, 207), #f12711, #f5af19);
+}
+.container{
+    width: 95%;
+}
+.container--item{
+    padding-bottom: 10;
+}
+.text--chart{
+    padding-bottom: 5;
+    font-size: 15;
+    font-weight: 500;
+    color: black;
+}
+.container--item--btn{
+    color: white;
+    font-size: 20;
+    border-radius: 5;
+    background: linear-gradient(to right, rgb(211, 158, 207), #f12711, #f5af19);
+}

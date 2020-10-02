@@ -1,0 +1,37 @@
+<GridLayout  rows="auto,auto,*" class="home">
+    <GridLayout class="top" row="0">
+        <label class="top--text" text="LẤY SỐ CHỜ NHẬN HÀNG"></label>
+    </GridLayout>
+    <GridLayout row="1" class="middle" rows="*,*,*,*,2*,3*" columns="*,*">
+        <GridLayout row="0" colSpan="2" columns="10*,*,10*">
+            <Button (tap)="openScanner()" class="middle--btn" row="0" col="0" text="Scan Hóa Đơn"></Button>            
+            <Button class="middle--btn" (tap)="onSelectSingleTap()" row="0" col="2" text="Chụp Hóa Đơn"></Button>
+        </GridLayout>
+        <label class="middle--txt txt1" row="1" colSpan="2" text="Tổng số mã đơn hàng :"></label>
+        <label class="middle--txt txt2" row="2" colSpan="2" text="Chưa có đơn hàng"></label>
+        <Button (tap)="tapDone()" class="middle--btn btndone " row="3" colSpan="2" text="HOÀN TẤT"></Button>
+        <label class="middle--txt " row="4" colSpan="2" text="Video hướng dẫn"></label>
+        <GridLayout *ngIf="this.guide" class="middle--video" row="5" colSpan="2" rows="*,*" columns="*,*">
+
+            <Image (tap)="openVideo1()" class="middle--video--img" stretch="fill" row="0" col="0"
+                [src]="guide[0].thumbnail"></Image>
+            <label class="middle--txt " row="1" col="0" textWrap="true" [text]="guide[0].title"></label>
+            <Image (tap)="openVideo2()" class="middle--video--img" stretch="fill" row="0" col="1"
+                [src]="guide[1].thumbnail"></Image>
+            <label class="middle--txt " row="1" col="1" textWrap="true" [text]="guide[1].title"></label>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="2" height="10%" width="95%" colSpan="2" rows="*,*,*" columns="6*,*,*" verticalAlignment="bottom"
+        class="bottom">
+        <StackLayout class="itembottom" rowSpan="2" col="1">
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe902;"></button>
+        </StackLayout>
+        <StackLayout class="itembottom" rowSpan="2" col="2">
+            <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+        </StackLayout>
+    </GridLayout>
+
+
+</GridLayout>

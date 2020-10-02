@@ -1,0 +1,116 @@
+<GridLayout class="home" rows="auto,auto,auto">
+    <GridLayout class="header" row="0">
+        <label class="header--text" text="SƠ ĐỒ THỐNG KÊ"></label>
+    </GridLayout>
+
+    <GridLayout row="1" height="80%" rows="auto,auto">
+        <GridLayout row="0" height="10%" columns="*,*,*,*,*,*">
+            <GridLayout (tap)="openLumi()" col="0" rows="9*,*">
+                <label row="0" text="Lumi" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==0"></label>
+            </GridLayout>
+            <GridLayout (tap)="openEco()" col="1" rows="9*,*">
+                <label row="0" text="Eco" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==1"></label>
+            </GridLayout>
+            <GridLayout (tap)="openFace()" col="2" rows="9*,*">
+                <label row="0" text="Face" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==2"></label>
+            </GridLayout>
+            <GridLayout (tap)="openBody()" col="3" rows="9*,*">
+                <label row="0" text="Body" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==3"></label>
+            </GridLayout>
+            <GridLayout (tap)="openAccent()" col="4" rows="9*,*">
+                <label row="0" text="Accent" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==4"></label>
+            </GridLayout>
+            <GridLayout (tap)="openMe()" col="5" rows="9*,*">
+                <label row="0" text="Me" class="tab--text"></label>
+                <label row="1" class="Gradient" *ngIf="mainindex==5"></label>
+            </GridLayout>
+        </GridLayout>
+        <GridLayout class="container" height="90%" row="1" [visibility]="mainindex == 0 ? 'visible' : 'collapse'">
+            <ScrollView height="100%" orientation="vertical">
+                <GridLayout rows="*,*,*,auto,auto">
+                    <StackLayout row="0" class="container--item">
+                        <label class="text--chart" text="Tổng lượng máy bán ra"></label>
+                        <RadCartesianChart height="200" tkExampleTitle tkToggleNavButton>
+                            <CategoricalAxis tkCartesianHorizontalAxis labelFitMode="Rotate" ticksHidden="true">
+                            </CategoricalAxis>
+                            <LinearAxis tkCartesianVerticalAxis lineHidden="true" labelFormat="%.0f"></LinearAxis>
+
+                            <RadCartesianChartGrid tkCartesianGrid horizontalLinesVisible="true"
+                                horizontalStrokeColor="gray" horizontalStrokeWidth="0.4">
+                            </RadCartesianChartGrid>
+
+                            <BarSeries tkCartesianSeries [items]="categoricalSource"  fillColor="red" showLabels="true"
+                                strokeColor="red" minBarSize="5" maxBarSize="20" categoryProperty="Country"
+                                stackMode="Stack" valueProperty="Amount" seriesName="Bar">
+                                <PointLabelStyle tkBarLabelStyle margin="20" textFormat="%,.0f"  fillColor="white" strokeColor="white"
+                                    textSize="10" textColor="black"></PointLabelStyle>
+                            </BarSeries>
+
+                        </RadCartesianChart>
+                    </StackLayout>
+                    <StackLayout row="1" class="container--item">
+                        <label class="text--chart" text="% lỗi trên tổng số bán"></label>
+                        <RadCartesianChart height="200" tkExampleTitle tkToggleNavButton>
+                            <CategoricalAxis tkCartesianHorizontalAxis labelFitMode="Rotate" ticksHidden="true">
+                            </CategoricalAxis>
+                            <LinearAxis tkCartesianVerticalAxis lineHidden="true" labelFormat="%.0f"></LinearAxis>
+
+                            <RadCartesianChartGrid tkCartesianGrid horizontalLinesVisible="true"
+                                horizontalStrokeColor="gray" horizontalStrokeWidth="0.4">
+                            </RadCartesianChartGrid>
+
+                            <BarSeries tkCartesianSeries [items]="categoricalSource" fillColor="red" showLabels="true"
+                                strokeColor="red" maxBarSize="20" categoryProperty="Country" valueProperty="Amount"
+                                seriesName="Bar" stackMode="Stack">
+                                <PointLabelStyle tkBarLabelStyle margin="20" fillColor="white" textFormat="%,.0f" strokeColor="white"
+                                    textSize="10" textColor="black"></PointLabelStyle>
+                            </BarSeries>
+                            <LineSeries tkCartesianSeries [items]="categoricalSource" strokeWidth="1" strokeColor="blue"
+                                categoryProperty="Country" valueProperty="SecondVal"></LineSeries>
+
+                        </RadCartesianChart>
+                    </StackLayout>
+                    <StackLayout row="2" class="container--item">
+                        <label class="text--chart" text="% theo lỗi thiết bị"></label>
+                        <RadPieChart allowAnimation="true" height="200" >
+                            <PieSeries tkPieSeries seriesName="myPieSeries"   showLabels="true"
+                             valueProperty="Amount" legendLabel="Country" 
+                                [items]="pieSource" startAngle="-90" >
+                            </PieSeries>
+
+                            <Palette tkPiePalette seriesName="myPieSeries">
+                                <PaletteEntry tkPiePaletteEntry strokeColor="Blue" fillColor="Blue"></PaletteEntry>
+                                <PaletteEntry tkPiePaletteEntry strokeColor="Orange" fillColor="Orange"></PaletteEntry>
+                                <PaletteEntry tkPiePaletteEntry strokeColor="Gray" fillColor="Gray"></PaletteEntry>
+                            </Palette>
+
+                            <RadLegendView tkPieLegend position="Right" offsetOrigin="TopRight" width="200"
+                                enableSelection="true"></RadLegendView>
+                        </RadPieChart>
+                    </StackLayout>
+                    <GridLayout row="3" height="10%">
+                        <Button (tap)="save()" class="container--item--btn" text="TẢI VỀ"></Button>
+
+                    </GridLayout>
+                    <label row="4"></label>
+                </GridLayout>
+            </ScrollView>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="2" height="10%" width="95%" colSpan="2" rows="*,*,*" columns="6*,*,*" verticalAlignment="bottom"
+        class="bottom">
+        <StackLayout class="itembottom" rowSpan="2" col="1">
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe902;"></button>
+        </StackLayout>
+        <StackLayout class="itembottom" rowSpan="2" col="2">
+            <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+        </StackLayout>
+    </GridLayout>
+</GridLayout>

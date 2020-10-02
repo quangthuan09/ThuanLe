@@ -1,0 +1,33 @@
+<GridLayout class="home" rows="*,3*,*">
+    <GridLayout row="0"  rows="*,*">
+        <GridLayout class="top1" row="1" rows="*,*">
+            <label row="0" text="LẤY SỐ" (loaded)="onLabelLoaded($event)" ></label>
+            <label row="1" text="CHỜ ĐẶT HÀNG"></label>
+        </GridLayout> 
+    </GridLayout>
+    <GridLayout row="1" class="middle" rows="*,*,*">
+        <GridLayout  row="0" class="middle--content" verticalAlignment="middle" columns="2*,5*">
+            <label  col="0"  class="middle--content--text" text="số 1"></label>
+            <label col="1" class="middle--content--text1" text="Đặt hàng"></label>
+        </GridLayout>
+        <GridLayout  row="1" class="middle--content" verticalAlignment="middle" columns="2*,5*">
+            <label  col="0"  class="middle--content--text" text="số 1"></label>
+            <label col="1" class="middle--content--text1" text="Đơn hàng trực tuyến"></label>
+        </GridLayout>
+        <GridLayout  row="2" class="middle--content" verticalAlignment="middle" columns="2*,5*">
+            <label  col="0"  class="middle--content--text" text="số 1"></label>
+            <label col="1" class="middle--content--text1" text="Nhận hợp đồng"></label>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout row="2" height="10%" width="95%" colSpan="2" rows="*,*,*" columns="6*,*,*"  verticalAlignment="bottom"
+    class="bottom">
+    <StackLayout class="itembottom"  rowSpan="2" col="1">
+        <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+            class="bottom--btn ico_moon" text="&#xe902;"></button>
+    </StackLayout>
+    <StackLayout class="itembottom" rowSpan="2" col="2">
+        <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+            class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+    </StackLayout>
+</GridLayout>
+</GridLayout>

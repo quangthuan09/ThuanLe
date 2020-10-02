@@ -1,0 +1,30 @@
+<GridLayout rows="auto,auto,auto,auto" columns="*,*" *ngIf="loading" class="home">
+    <GridLayout class="top" row="0" colSpan="2">
+        <label class="top--text" text="BẢN ĐỒ VĂN PHÒNG"></label>
+    </GridLayout>
+    <GridLayout row="1" colSpan="2" rows="*,3*,*" class="choosemap">
+        <GridLayout class="choosemap--bg" row="1" columns="*,*">
+            <Button  col="0" class="{{ mainindex==0 ? ' OrangeColor' : '  defaultColor'}}" (tap)="tapHCM()" text="HỒ CHÍ MINH"></Button>
+            <Button  col="1" class="{{ mainindex==1 ? ' OrangeColor' : '  defaultColor'}}" (tap)="tapHN()" text="HÀ NỘI"></Button>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout #container *ngIf="chooseImg == true" row="2" colSpan="2" width="90%" height="80%" (pan)="onPan($event)" (pinch)="onPinch($event)" (doubleTap)="onDoubleTap(event)" backgroundColor="Green">
+        <Image #imageMaps horizontalAlignment="center" verticalAlignment="middle" stretch="aspectFit" height="230" [src]="config.headerUrlImage + maps.map_hcm"  ></Image>
+    </GridLayout>
+    <GridLayout #container *ngIf="chooseImg == false" row="2" colSpan="2" width="90%" height="80%" (pan)="onPan($event)" (pinch)="onPinch($event)" (doubleTap)="onDoubleTap(event)" backgroundColor="Green">
+        <Image #imageMaps horizontalAlignment="center" verticalAlignment="middle" stretch="aspectFit" height="230" [src]="config.headerUrlImage + maps.map_hn"  ></Image>
+    </GridLayout>
+
+    <GridLayout row="2" height="10%" width="95%" colSpan="2" rows="*,*,*" columns="6*,*,*"  verticalAlignment="bottom"
+        class="bottom">
+        <StackLayout class="itembottom"  rowSpan="2" col="1">
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe902;"></button>
+        </StackLayout>
+        <StackLayout class="itembottom" rowSpan="2" col="2">
+            <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+                class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+        </StackLayout>
+    </GridLayout>
+
+</GridLayout>

@@ -1,0 +1,30 @@
+  
+<StackLayout>
+    <GridLayout class="top" height="10%" rows="*,*,*" columns="*,*,*,*" >
+        <label row="1" col="0"  (tap)="tapBack()" 
+        class="btnback ico_moon" text="&#xe902;"></label>
+        <label  row="1" col="1" colSpan="2"  text="LIÊN HỆ ĐẶT HÀNG" ></label>
+        
+    </GridLayout>
+    
+    <ListView height="82%" margin-bottom="50" padding="5" #list [items]="chats$ | async">
+        <ng-template let-item="item">
+            <GridLayout columns="*" rows="auto" class="msg">
+                <StackLayout [class]="filter(item.from)" orientation="horizontal" [horizontalAlignment]="align(item.from)">
+                    <Image [visibility]="showImage(item.from)" class="authorimg" stretch="aspectFill" height="30" width="30" verticalAlignment="top"  col="1"></Image>
+                    <Label [text]='item.message' class="msg_text" textWrap="true" verticalAlignment="top"></Label>
+                </StackLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+
+    <StackLayout #chatbox  height="8%">
+        <GridLayout backgroundColor="green" columns="6*,*,*" >
+            <TextField #textfield class="chatTextField" row="0" col="0" colSpan="3" hint="Nhập nội dung" [(ngModel)]="message"></TextField>
+            <Button #btn class="chatBtn ico_moon" row="0" col="1" text="&#xe927;" (tap)="onSelectSingleTap()"></Button>
+            <Button  class="chatBtn ico_moon" row="0" col="2" text="&#xe904;" (tap)=chat(message)></Button>
+            
+        </GridLayout>
+    </StackLayout>
+
+</StackLayout>

@@ -1,0 +1,146 @@
+
+
+.layout_chat_contact {
+
+    background-size: cover;
+  }
+
+  
+  .action_bar_title_main {
+    font-size: 20;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10;
+  }
+  .button_close {
+    width: 80;
+    height: 55;
+    color: white;
+    font-size: 25;
+    background-color: transparent;
+    padding-top: 15;
+    padding-right: 20;
+    text-align: center;
+    vertical-align: middle;
+  
+    android-dynamic-elevation-offset: 3;
+    android-elevation: 0;
+  }
+  .layout_ic_fly {
+    width: 50;
+    height: 50;
+    background: linear-gradient( 45deg, #d10d83,#4370ca);
+    
+    text-align: center;
+    vertical-align: middle;
+  }
+  .layout_contact_chat_middle{
+    margin-top: 5;
+  }
+  
+  .layout_message_input {
+    height: 50;
+    border-width: 2;
+    vertical-align: bottom;
+    border-color: #eef5f7;
+    background-color: white;
+  }
+  ListView {
+    separator-color: transparent;
+  }
+  
+  .msg {
+      font-size: 18;
+      padding: 5;
+  }
+  
+  .me .msg_text {
+      background-color: #30A9FF;
+      color: white;
+      padding: 8;
+      margin-right: 10;
+      border-radius: 5;
+      
+  }
+  
+  .them .msg_text {
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 7;
+      border-radius: 5;
+      margin-right: 40;
+  }
+  
+  .authorimg {
+      margin: 0 5 5 5;
+      width: 30;
+      height: 30;
+      border-radius: 15;
+  }
+  
+  .chatTextField {
+      padding: 5; 
+      background-color: lightgray; 
+      border-radius: 4;
+  }
+  ListView {
+    separator-color: white;
+  }
+  .top{
+    background: linear-gradient(to right, #4568DC, #B06AB3);
+      vertical-align: middle;
+      text-align: center;
+      font-size: 18;
+      color: white;
+  }
+  .msg {
+      font-size: 14;
+      padding: 5;
+  }
+  
+  .me .msg_text {
+      background-color: #30A9FF;
+      color: white;
+      padding: 8;
+      margin-right: 10;
+      border-radius: 5;
+      
+  }
+  
+  .them .msg_text {
+      background-color: #6e0b0b;
+      color: #333;
+      padding: 7;
+      border-radius: 5;
+      margin-right: 40;
+  }
+  
+  .authorimg {
+      margin: 0 5 5 5;
+      width: 30;
+      height: 30;
+      border-radius: 15;
+  }
+  
+  .chatTextField {
+      padding: 5; 
+      background-color:ghostwhite;
+      border-width: 1;
+
+  }
+  
+  .chatBtn{
+
+      background: linear-gradient(to right, #4568DC, #B06AB3);
+      color: white;
+      height: 100%;
+
+  }
+  .btnback{
+      width: 10%;
+      height: 100%;
+    font-size: 25;
+    text-align: left;
+  }
+  

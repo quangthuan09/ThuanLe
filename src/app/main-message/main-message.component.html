@@ -1,0 +1,35 @@
+<GridLayout rows="*,8*,*" columns="*,*,*,*">
+
+<GridLayout class="top" row="0" col="0" colSpan="4" rows="*,*,*,*" columns="*,*,*,*">
+    <label col="1" row="1" colSpan="2" rowSpan="2" text="TIN NHẮN"></label>
+</GridLayout>
+
+<ScrollView width="95%" class="content" height="85%" col="0" row="1" colSpan="4" orientation="vertical">
+    <!-- More XML -->
+
+    <GridLayout rows="auto,auto,auto"  >
+        <GridLayout row="0" class="index" (tap)="tapMessageReception()" columns="auto,auto" >
+            <Image col="0" src="~/app/images/main/icon11.png"></Image>
+            <label col="1" class="text1" text="Liên Hệ Tiếp Tân"></label>
+        </GridLayout>
+        <GridLayout row="1" (tap)="tapMessageOrder()" class="index" columns="auto,auto" >
+            <Image col="0" src="~/app/images/main/icon11.png"></Image>
+            <label col="1" class="text1" text="Liên Hệ Đặt Hàng"></label>
+        </GridLayout>
+        <GridLayout row="2" (tap)="tapMessageDelivery()" class="index" columns="auto,auto" >
+            <Image col="0" src="~/app/images/main/icon11.png"></Image>
+            <label col="1" class="text1" text="Liên Hệ Giao Hàng"></label>
+        </GridLayout>
+    </GridLayout>
+</ScrollView>
+</GridLayout>
+<GridLayout row="2" colSpan="4" rows="*,*,*" columns="6*,*,*" height="10%" width="95%" verticalAlignment="bottom" class="bottom">
+    <StackLayout (tap)="tapBack()" class="itembottom" rowSpan="2" col="1">
+        <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"
+            class="bottom--btn ico_moon" text="&#xe902;"></button>
+    </StackLayout>
+    <StackLayout class="itembottom" rowSpan="2" col="2">
+        <button (tap)="tapBack()" horizontalAlignment="center" (loaded)="onLabelLoaded($event)"
+            class="bottom--btn ico_moon" text="&#xe9bd;"></button>
+    </StackLayout>
+</GridLayout>

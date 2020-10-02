@@ -1,0 +1,180 @@
+.home{
+    background-image: url("~/app/images/bg_2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bottomM{
+    background: linear-gradient(to left, #8900f8, #f64f59);
+  border-top-left-radius: 30;
+  border-top-right-radius: 30;
+    height: 9%;
+}
+.menubar{
+    font-size: 20;
+}
+
+.itembottomM{
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 14;
+}
+.info{
+    padding-left: 15;
+    font-size: 14;
+    margin-bottom: 10;
+}
+.text{
+    width: 90%;
+    font-size: 12;
+    text-align: center;
+}
+.tabstrip{
+    background-color: rgb(69, 227, 233);
+}
+#txt_bottom{
+    font-size: 14;
+}
+#itemdrawer{
+    color: blue;
+    font-size: 15;
+}
+
+.page-content .page-placeholder {
+    color: #D7D7D7;
+    font-size: 20;
+    vertical-align: center;
+
+}
+.page-content .page-icon {
+    font-size: 72;
+    vertical-align: top;
+    padding: 15;
+    color: #D7D7D7;
+    margin-top: 20%;
+}
+.tabstrip{
+    background-color: rgb(45, 143, 127);
+}
+.sidedrawer {
+    margin-bottom: -100;
+}
+.sidedrawer-list-item-icon,.sidedrawer-list-item{
+    color: #022734;
+    font-size: 15;
+    padding: 10;
+}
+.sidedrawer.sidedrawer-left {
+    background-color: #3A53FF;
+}
+.user{
+    background-color: gray;
+
+    margin-top: 20;
+    border-radius: 100;
+}
+.sidedrawer.sidedrawer-left .sidedrawer-header-image {
+    color: lightgray;
+    height: 60;
+    width: 60;
+    font-size: 55;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+
+}
+.sidedrawer.sidedrawer-left .footnote {
+    color: rgba(255,255,255,0.5);
+    padding: 3;
+}
+.sidedrawer .sidedrawer-header {
+    background-color: #3A53FF;
+}
+.sidedrawer .sidedrawer-header .sidedrawer-header-brand {
+    color: #fff;
+}
+.sidedrawer .sidedrawer-content{ 
+    background-color: #fff;
+}
+.sidedrawer .sidedrawer-content .sidedrawer-list-item{
+    padding-left: 15;
+}
+.sidedrawer .sidedrawer-content .sidedrawer-list-item Label {
+    vertical-align: center;
+    color: #022734;
+}
+.sidedrawer .sidedrawer-content .sidedrawer-list-item .fa {
+    width: 20;
+    margin-right: 10;
+}
+.sidedrawer .sidedrawer-content .sidedrawer-list-item.selected {
+    background-color: #F8F8F8;
+}
+.sidedrawer .sidedrawer-content .sidedrawer-list-item.selected Label {
+    color:#3A53FF;
+}
+ 
+
+.label_tk{
+    font-weight: 600;
+    font-size: 15;
+
+}
+.item_tk{
+    font-size: 15;
+}
+.OrangeColor{
+    color: orange;
+}
+.defaultColor{
+    color: white;
+}
+
+.dotted {
+    margin-right: 10;
+    margin-top: 5;
+    background: gray;
+    color: gray;
+    border-radius: 6;
+    height: 13;
+    width: 13;
+  }
+  .dotted_active {
+    width: 40;
+    height: 13;
+    margin-right: 10;
+    margin-top: 5;
+    border-radius: 20;
+    background: linear-gradient(to left,#c119a2,#1f9bd8);
+  }
+
+.imageQC{
+    /* background-color: gray; */
+    background-image: url('~/app/images/default.png') ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.txt-account{
+    margin-top: 10;
+    margin-bottom: 10;
+    padding-right: 10;
+    padding-left: 10;
+    font-size: 15;
+}
+#txt-account-header{
+    color: blue;
+}
+#txt-account-right{
+    text-align: right;
+}
+.iconlogout{
+    padding-right: 10;
+    text-align: right;
+    vertical-align: middle;
+}
+.hr{
+    border-bottom-width: 1;
+    border-color: rgb(172, 168, 161);
+    width: 95%;
+}

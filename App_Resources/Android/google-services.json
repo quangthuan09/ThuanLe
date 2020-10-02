@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "341239128119",
+    "firebase_url": "https://scanner-b9835.firebaseio.com",
+    "project_id": "scanner-b9835",
+    "storage_bucket": "scanner-b9835.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341239128119:android:b0e7de19f74ea36f77dfb2",
+        "android_client_info": {
+          "package_name": "org.nativescript.NUSKIN"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341239128119-kk0kaqj16i6f0psecq6n39e8ecffaf84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXxjwY1rS2zwZ9jVHoS3_GjaioDGzLhjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341239128119-kk0kaqj16i6f0psecq6n39e8ecffaf84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,60 @@
+.GridBar{
+    padding-top: 10;
+    margin-left: 10;
+    width: 95%;
+    height: 50;
+}
+#text_color{
+    color: white;
+}
+.GridBar__btnback{
+    font-size: 30;
+    color: white;
+    text-align: center;
+}
+.GridBar__label{
+    margin-right: 50;
+    padding-top: 10;
+    font-size: 20;
+    text-align: center;
+}
+.Alert{
+    text-align: center;
+    padding-top: 15;
+    font-size: 15;
+}
+.Alert0{
+    width: 90%;
+    text-align: center;
+    padding-top: 15;
+    font-size: 15;
+}
+.RowsIndex{
+    margin-top: 10;
+    width: 95%;
+    padding-left: 10%;
+    height: 50;
+}
+.RowsIndex_icon{
+    border-radius: 5;
+    background-color: white;
+}
+.RowsIndex_Field{
+    height: 100%;
+    width: 75%;
+    border-radius: 5;
+    padding-left: 10;
+    background-color: rgba(255,255,255, 0.3);
+    font-size: 16;
+    color: white;
+}
+.Llabel_resignter{
+    width: 88%;
+    border-radius: 5;
+    height: 50;
+    margin-top: 20;
+    font-size: 20;
+    vertical-align: middle;
+    background-color: white;
+    
+}

@@ -1,0 +1,55 @@
+
+
+/* Place any CSS rules you want to apply on both iOS and Android here.
+This is where the vast majority of your CSS code goes. */
+.far {
+    font-family:  fa-regular-400;
+    font-weight: 400; 
+}
+
+.fab {
+    font-family:  fa-brands-400;
+    font-weight: 400; 
+}
+
+.fas {
+    font-family:  fa-solid-900;
+    font-weight: 900; 
+}
+
+.page{
+    background-image: url('~/app/images/bg_login.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.ico_moon{
+    font-family: "icomoon";
+    font-weight: normal;
+    font-style: normal;
+}
+.fa {
+    font-family: "FontAwesome";
+}
+.top--text{
+    vertical-align: middle;
+    font-size: 20;
+    padding-top: 5;
+}
+.top{
+    background: linear-gradient(to right, #56CCF2,#7F00FF);
+    vertical-align: middle;
+    text-align: center;
+    color: white;
+    height: 10%;
+}
+
+.itembottom{
+    vertical-align: middle;
+}
+.bottom--btn{
+    background-color: white;
+    border-radius: 100;
+    font-size: 20;
+    margin: 1;
+    vertical-align: middle;
+}

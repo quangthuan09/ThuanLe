@@ -1,0 +1,31 @@
+<StackLayout class="background">
+    <StackLayout class="top">
+        <label text="HỖ TRỢ KỸ THUẬT"></label>
+    </StackLayout>
+
+    <StackLayout class="middle">
+        <label class="thongbao" textWrap="true" textAlignment="center"
+            text="Nhập thông tin & gửi yêu cầu hỗ trợ tới nhân viên"></label>
+        <DockLayout class="Lindex" stretchLastChild="true">
+            <StackLayout class="icon">
+                <Image src="~/app/images/iconphone.jpg"></Image>
+            </StackLayout>
+            <TextField id="index" dock="right" hint="Nhập số điện thoại" class="email"> </TextField>
+        </DockLayout>
+        <DockLayout class="Lindex" stretchLastChild="true">
+            <StackLayout class="icon">
+                <Image src="~/app/images/iconmail.jpg"></Image>
+            </StackLayout>
+            <TextField id="index" dock="right" hint="Nhập email*" class="email"> </TextField>
+        </DockLayout>
+        <TextView class="noidung" width="100%" minHeight="100" padding="15" hint="nội dung" autocapitalizationType="none"></TextView>
+        <Button class="btn_POST" text="GỬI"></Button>
+    </StackLayout>
+    <GridLayout width="90%"  rows="*,*,*,*" columns="*,*,*,*,*,*">
+        <StackLayout (tap)="tapBack()" class="itembottom" col="5" row="2"  rowSpan="2" >
+            <button horizontalAlignment="center" (tap)="tapBack()" (loaded)="onLabelLoaded($event)" class="btnback fas"
+            text="&#xf053;" ></button>
+        </StackLayout>
+        <!-- <button class="btnback" (tap)="tapBack()" (loaded)="onLabelLoaded($event)"  col="6" row="2" textAlignment="center"  class="fas" text="&#xf053;"></button> -->
+    </GridLayout>
+</StackLayout>

@@ -1,0 +1,45 @@
+
+
+<GridLayout  rows="auto,*,auto" class="layout_chat_contact">
+
+    <GridLayout class="top" height="10%" rows="*,*,*" columns="*,*,*,*" >
+        <label row="1" col="0"  (tap)="tapBack()" 
+        class="btnback ico_moon" text="&#xe902;"></label>
+        <label  row="1" col="1" colSpan="2"  text="LIÊN HỆ TIẾP TÂN" ></label>
+        
+    </GridLayout>
+    <StackLayout height="90%" row="1">
+    <GridLayout height="90%" class="layout_contact_chat_middle">
+        <ScrollView>
+            <ListView #listView padding="5" class="layout_list_item" [items]="messageList" class="list">
+                <ng-template let-item="item">
+                    <GridLayout columns="*" rows="auto" class="msg">
+                        <StackLayout [class]="filter(item.user.userName)" orientation="horizontal"
+                            [horizontalAlignment]="align(item.user.userName)">
+                            <Image [visibility]="showImage(item.user.userName)" class="authorimg" stretch="aspectFill"
+                                height="30" width="30" verticalAlignment="top" 
+                                col="1" backgroundColor="black"></Image>
+                            <Label [text]='item.message' class="msg_text" textWrap="true"
+                                verticalAlignment="top"></Label>
+                        </StackLayout>
+                    </GridLayout>
+                </ng-template>
+            </ListView>
+        </ScrollView>
+    </GridLayout>
+
+
+
+    <GridLayout height="10%" columns="*,auto,auto" verticalAlignment="bottom">
+        <TextField #textField [(ngModel)]="message" hint="Nhập nội dung" col="0" class="layout_message_input"
+            autocorrect="false" autocapitalizationType="none" verticalAlignment="bottom"></TextField>
+        <GridLayout col="1" class="layout_ic_fly" horizontalAlignment="center" verticalAlignment="bottom">
+            <Button #btn class="chatBtn ico_moon" text="&#xe927;" (tap)="onSelectSingleTap()"></Button>
+        </GridLayout>
+        <GridLayout col="2" class="layout_ic_fly" horizontalAlignment="center" verticalAlignment="bottom"
+            (tap)=sendMessage(this.message)>
+            <Button class="chatBtn ico_moon" text="&#xe904;" (tap)=sendMessage(this.message)></Button>
+        </GridLayout>
+    </GridLayout>
+</StackLayout>
+</GridLayout>
